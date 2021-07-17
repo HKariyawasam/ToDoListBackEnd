@@ -27,7 +27,6 @@ connection.once("open",() => {
 
 
 const listRouter = require("./routes/todoList.js");
-
 app.use("/todos",listRouter);//table name is created at this point
 
 

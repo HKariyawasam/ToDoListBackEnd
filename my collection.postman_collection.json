@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "38c75303-54f4-48a5-933b-7ceab0a9b6ef",
+		"name": "my collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":7,\"title\":\"beta sagittis sapien cum sociis\",\"timestamp\":\"2020-10-09T12:06:05Z\",\"color\":\"#00b894\",\"completed\":true,\"priority\":\"medium\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8070/todos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"todos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by name beta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\"id\":7,\"title\":\"vivamus vestibulum sagittis sapien cum sociis\",\"timestamp\":\"2020-10-09T12:06:05Z\",\"color\":\"#00b894\",\"completed\":true,\"priority\":\"medium\"}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8070/todos/searchListByName/beta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"todos",
+						"searchListByName",
+						"beta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8070/todos/get/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"todos",
+						"get",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8070/todos/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"todos",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter by red colour",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8070/todos/filterListByColor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"todos",
+						"filterListByColor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter by start date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8070/todos/startDate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"todos",
+						"startDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter by end date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8070/todos/endDate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"todos",
+						"endDate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -14,24 +14,20 @@ const todoListSchema = new Schema({
     title : {
         type :String,
         required :true,
-      
-
     },
 
     timestamp : {
         type :Date,
-        
-
     },
 
     color : {
         type :String,
+        
     },
 
     completed : {
         type : Boolean,
-        required :true,
-        
+        required :true,      
     },
 
     priority : {

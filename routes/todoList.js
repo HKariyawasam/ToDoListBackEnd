@@ -1,6 +1,8 @@
 const router =require("express").Router();
 let List = require("../models/TodoList");
 
+
+
 router.route("/add").post((req,res) => {
 
     const id = Number(req.body.id);
@@ -10,16 +12,22 @@ router.route("/add").post((req,res) => {
     const completed = req.body.completed;
     const priority = req.body.priority;
     
+    if(!color.match(/^#[0-9A-F]{6}$/i)){
+        console.log("Colour is not a hex clour");
+        res.status(300).send({status:"Error with hexColour recheck"});
+    }else{
+        const newList = new List({id,title,timestamp,color,completed,priority,})
 
-    const newList = new List({id,title,timestamp,color,completed,priority,})
+        newList.save().then(() =>{//pass the object to database if successful
+            res.status(200).send({message:"List Added"})//from jason format a response sent to front end
+        }).catch((err) =>{//error or exception handling
+            console.log(err);
+            res.status(300).send({status : "Error with insert list",error:err.message});
+    
+        })
+    }
 
-    newList.save().then(() =>{//pass the object to database if successful
-        res.status(200).send({message:"List Added"})//from jason format a response sent to front end
-    }).catch((err) =>{//error or exception handling
-        console.log(err);
-        res.status(300).send({status : "Error with insert list",error:err.message});
-
-    })
+   
 
 })
 
